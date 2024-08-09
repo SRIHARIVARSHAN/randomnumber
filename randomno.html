@@ -19,6 +19,10 @@
         let score = 15;
 
         function eval() {
+            if (gno.value === "") {
+                alert("Please enter a number before checking!");
+                return;
+            }
             if (ran == gno.value) {
                 console.log("right");
                 d.textContent = "You are Right!!!";
