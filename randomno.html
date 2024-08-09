@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+</head>
+<body style="text-align: center; padding: 10%;">
+    
+    <input id="input" type="number" style="color: white; background-color: black;" link="CHECK">
+    <button type="button" class="btn btn-primary" style="border-radius: 10px;" onclick="eval()">CHECK</button>
+    <h3 id="disp">Let's Play</h3>
+    <h4 id="sc">Score=15</h4>
+    <h4 id="ann"></h4>
+
+    <script>
+        let gno = document.getElementById("input");
+        let ran = Math.floor(Math.random() * 10) + 1;
+        let d = document.getElementById("disp");
+        let point = document.getElementById("sc");
+        let inf = document.getElementById("ann");
+        let score = 15;
+
+        function eval() {
+            if (ran == gno.value) {
+                console.log("right");
+                d.textContent = "You are Right!!!";
+                inf.textContent = "Your Score is " + score;
+                alert("YOU WON")
+                document.querySelector('button').disabled = true;
+            } else {
+                if (score > 0) {
+                    score--;  
+                }
+                point.textContent = "Score=" + score;
+                d.textContent = "You are Wrong";
+
+                if (score <= 0) {
+                    inf.textContent = "You are out of tries";
+                    document.querySelector('button').disabled = true;
+                }
+            }
+        }
+    </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>
+
